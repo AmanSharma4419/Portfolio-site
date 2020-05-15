@@ -1,57 +1,68 @@
-import React from  "react"
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import About from "./Navbar";
 
-import SwipeableTemporaryDrawer from "./Sidebar"
-const image= {
-    width: 150,
-    height: 150,
-    borderRadius: 150 / 2,
-    overflow: "hidden",
-    borderWidth: 3,
-    borderColor: "red"
+class Homepage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      initialArr: "",
+      quotesArr: [
+        "There is nothing permanent except change.",
+        "There is no charm equal to tenderness of heart.",
+        "Learning never exhausts the mind.",
+        "Honesty is the first chapter in the book of wisdom.",
+        "I have not failed. I've just found 10,000 ways that won't work.",
+        "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
+        "If opportunity doesn't knock, build a door.",
+      ],
+      randomClassnames: [
+        "tile is-child notification is-info",
+        "tile is-child notification  is-primary",
+      ],
+    };
   }
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      width: "20px",
-    },
-    heading: {
-      fontSize: theme.typography.pxToRem(15),
-      fontWeight: theme.typography.fontWeightRegular,
-    },
-  }));
-export default function Homepage  ()  {
-    const classes = useStyles();
-
-return (
-    <React.Fragment>
-        <div style={{display:"flex"}}><div><SwipeableTemporaryDrawer/></div>
-    <div><img style={image} src={require("../Img/image.jpg")}/></div>
-    <div style={{width:"70%"}}>
-    <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+  componentDidMount() {
+    this.timeout = setTimeout((quotesArr) => {
+      this.randomArrGen((quotesArr = this.state.quotesArr));
+    }, 1000);
+  }
+  componentWillUpdate() {
+    this.timeout = setTimeout((quotesArr) => {
+      this.randomArrGen((quotesArr = this.state.quotesArr));
+      this.state.randomClassnames.reverse();
+    }, 5000);
+  }
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  }
+  randomArrGen = (quotesArr) => {
+    return this.setState({
+      ...this.state,
+      initialArr:
+        quotesArr[Math.floor(Math.random() * (quotesArr.length - 0) + 0)],
+    });
+  };
+  render() {
+    return (
+      <div className="App">
+        <About />
+        <div class="tile is-parent">
+          <article class={this.state.randomClassnames[0]}>
+            <p class="title">Aman Sharma Fullstack Developer</p>
+            <hr />
+            {this.state.initialArr !== null ? (
+              <div
+                class="content"
+                style={{ fontFamily: " cursive", fontSize: "30px" }}
+              >
+                {this.state.initialArr}
+              </div>
+            ) : null}
+          </article>
+        </div>
       </div>
-    </div>
-    
-    
-    </React.Fragment>
-    
-)
+    );
+  }
 }
+
+export default Homepage;
