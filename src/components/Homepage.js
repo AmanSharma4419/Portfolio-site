@@ -1,5 +1,5 @@
 import React from "react";
-import About from "./Navbar";
+import Navbar from "./Navbar";
 
 class Homepage extends React.Component {
   constructor() {
@@ -16,8 +16,8 @@ class Homepage extends React.Component {
         "If opportunity doesn't knock, build a door.",
       ],
       randomClassnames: [
-        "tile is-child notification is-info",
-        "tile is-child notification  is-primary",
+        "tile is-child notification  is-sucess",
+        "tile is-child notification is-primary",
       ],
     };
   }
@@ -30,7 +30,7 @@ class Homepage extends React.Component {
     this.timeout = setTimeout((quotesArr) => {
       this.randomArrGen((quotesArr = this.state.quotesArr));
       this.state.randomClassnames.reverse();
-    }, 5000);
+    }, 3500);
   }
   componentWillUnmount() {
     clearTimeout(this.timeout);
@@ -45,17 +45,19 @@ class Homepage extends React.Component {
   render() {
     return (
       <div className="App">
-        <About />
+        <Navbar />
+        <hr />
         <div class="tile is-parent">
           <article class={this.state.randomClassnames[0]}>
             <p class="title">Aman Sharma Fullstack Developer</p>
-            <hr />
+
             {this.state.initialArr !== null ? (
               <div
                 class="content"
-                style={{ fontFamily: " cursive", fontSize: "30px" }}
+                style={{ fontFamily: " cursive", fontSize: "60px" }}
               >
                 {this.state.initialArr}
+                {this.state.initialArr ? <hr /> : null}
               </div>
             ) : null}
           </article>
