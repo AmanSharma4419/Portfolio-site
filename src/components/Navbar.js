@@ -17,7 +17,9 @@ export default function Navbar() {
             <Link to="/skills" class="navbar-item">
               Skills
             </Link>
-            <Link class="navbar-item">Contact</Link>
+            <Link to="/contact" class="navbar-item">
+              Contact
+            </Link>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">More</a>
