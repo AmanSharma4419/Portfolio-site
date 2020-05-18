@@ -23,36 +23,42 @@ export default function Navbar() {
               </Link>
 
               <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" >More</a>
+                <a class="navbar-link">More</a>
 
                 <div class="navbar-dropdown">
                   <a
                     href="https://amansharmablog.netlify.app/"
-                    class="navbar-item" style={{color:"black"}}
+                    class="navbar-item"
+                    style={{ color: "black" }}
                   >
                     Blog
                   </a>
                   <a
                     href="https://github.com/AmanSharma4419"
-                    class="navbar-item" style={{color:"black"}}
+                    class="navbar-item"
+                    style={{ color: "black" }}
                   >
                     Github
                   </a>
                   <a
                     href="https://twitter.com/amansharma214"
-                    class="navbar-item" style={{color:"black"}}
+                    class="navbar-item"
+                    style={{ color: "black" }}
                   >
                     Twitter
                   </a>
                   <a
                     href="https://www.linkedin.com/in/aman-sharma-b21b68196/"
-                    class="navbar-item"style={{color:"black"}}
+                    class="navbar-item"
+                    style={{ color: "black" }}
                   >
                     Linkdien
                   </a>
 
                   <hr class="navbar-divider" />
-                  <a class="navbar-item" style={{color:"black"}}>Report an issue</a>
+                  <a class="navbar-item" style={{ color: "black" }}>
+                    Report an issue
+                  </a>
                 </div>
               </div>
             </div>
@@ -63,9 +69,7 @@ export default function Navbar() {
                     to="/"
                     style={{ boxSizing: "border-box", padding: "3.5px" }}
                   >
-                    <h2 style={{ color: "white", fontFamily: "sans" }}>
-                      AMAN SHARMA
-                    </h2>
+                    <h2 className="has-text-weight-semibold">AMAN SHARMA</h2>
                   </Link>
                 </div>
               </div>

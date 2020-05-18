@@ -6,6 +6,27 @@ export default function Contact() {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [message, setmessage] = useState("");
+  const [isActive, setisActive] = useState(false);
+  const [textTypeCredential, settextTypeCredential] = useState(false);
+
+  const messageText = {
+    text_for_credentials: "Please Fill Your All Credentials.",
+    text_for_submission:
+      "Thanks For Your FeedBack Will Get In Touch Very Soon.",
+  };
+  const handleSubmit = (e) => {
+    if (!name || !email || !message) {
+      return setisActive(true), settextTypeCredential(true);
+    } else {
+      return (
+        sendEmail(),
+        setisActive(true),
+        setmessage((e.target.value = "")),
+        setname((e.target.value = "")),
+        setemail((e.target.value = ""))
+      );
+    }
+  };
 
   let templateParams = {
     to_name: "Aman Sharma",
@@ -15,29 +36,25 @@ export default function Contact() {
     message_html: message,
   };
 
-  const handleSubmit = (e) => {
-    console.log(
-      process.env.REACT_APP_API_gmail,
-      process.env.REACT_APP_API_template,
-      templateParams,
-      process.env.REACT_APP_API_user
-    );
-    emailjs
+  const sendEmail = async (e) => {
+    const email = await emailjs
       .send(
         process.env.REACT_APP_API_gmail,
         process.env.REACT_APP_API_template,
-        process.env.templateParams,
+        templateParams,
         process.env.REACT_APP_API_user
       )
       .then(
         function (response) {
-          console.log("SUCCESS!", response.status, response.text);
+          setisActive(true);
         },
         function (error) {
-          console.log("FAILED...", error);
+          console.log(error, "SOME ERROR OCCURED");
         }
       );
+    return email;
   };
+
   return (
     <>
       <Navbar />
@@ -55,6 +72,28 @@ export default function Contact() {
       </section>
       <section class="hero is-light">
         <div style={{ width: "40%", marginLeft: "10px", marginTop: "20px" }}>
+          {isActive ? (
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>Primary</p>
+                <button
+                  class="delete"
+                  aria-label="delete"
+                  onClick={() => {
+                    setisActive(false);
+                  }}
+                ></button>
+              </div>
+              <div class="message-body">
+                <p>
+                  {textTypeCredential
+                    ? messageText.text_for_credentials
+                    : messageText.text_for_submission}
+                </p>
+              </div>
+            </article>
+          ) : null}
+
           <div class="field">
             <label class="label">Name</label>
             <div class="control">
@@ -73,12 +112,14 @@ export default function Contact() {
             <label class="label">Email</label>
             <div class="control">
               <input
-                type="Email"
-                class="input"
-                placeholder="Email input"
+                className="input"
+                type="email"
+                placeholder="Enter Email"
                 onChange={(e) => {
                   setemail(e.target.value);
                 }}
+                id="email"
+                name="email"
               />
             </div>
           </div>
@@ -102,12 +143,7 @@ export default function Contact() {
             style={{ display: "flex", justifyContent: "center" }}
           >
             <div class="control">
-              <button
-                class="button is-link"
-                onClick={() => {
-                  handleSubmit();
-                }}
-              >
+              <button class="button is-link" onClick={handleSubmit}>
                 Submit
               </button>
             </div>

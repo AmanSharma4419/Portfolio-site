@@ -8,41 +8,40 @@ export default function Skills() {
       <section class="hero is-medium is-primary is-bold">
         <div class="hero-body">
           <div class="container">
-            <h1 class="title">Complete Skill Set</h1>
+            <h1 class="title">Complete Skills Set</h1>
             <h2 class="subtitle">
               Skills Which Are Used By Aman Sharma For Software Development.
             </h2>
           </div>
         </div>
       </section>
-      <hr/>
+      <hr />
       <div class="content">
-        <div style={{marginLeft:"42%"}}>
+        <div style={{ marginLeft: "42%" }}>
           <h3 class="subtitle">Languages</h3>
           <ol type="1">
-            <li>Html 5</li>
-            <li>Css 3</li>
-            <li>JavaScript</li>
+            <li className="has-text-weight-medium	">Html 5</li>
+            <li className="has-text-weight-medium	">Css 3</li>
+            <li className="has-text-weight-medium	">JavaScript</li>
           </ol>
           <h3 class="subtitle">Frontend-Libraries</h3>
           <ol type="1">
-            <li>ReactJs</li>
-            <li>Redux</li>
+            <li className="has-text-weight-medium	">ReactJs</li>
+            <li className="has-text-weight-medium	">Redux</li>
           </ol>
           <h3 class="subtitle">UI-Frameworks</h3>
           <ol type="1">
-            <li>Material UI</li>
-            <li>Bulma Css</li>
+            <li className="has-text-weight-medium	">Material UI</li>
+            <li className="has-text-weight-medium	">Bulma Css</li>
           </ol>
           <h3 class="subtitle">Backend-Enviromnet & Frameworks</h3>
           <ol type="1">
-            <li>Nodejs</li>
-            <li>ExpressJs</li>
+            <li className="has-text-weight-medium	">Nodejs</li>
+            <li className="has-text-weight-medium	">ExpressJs</li>
           </ol>
           <h3 class="subtitle">Databases</h3>
           <ol type="1">
-            <li>Nosql-MongoDB</li>
-            <li>Mysql</li>
+            <li className="has-text-weight-medium	">Nosql-MongoDB</li>
           </ol>
         </div>
 

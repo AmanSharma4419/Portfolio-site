@@ -21,21 +21,21 @@ class Homepage extends React.Component {
       ],
     };
   }
-  componentDidMount() {
+  async componentDidMount() {
     this.timeout = setTimeout((quotesArr) => {
       this.randomArrGen((quotesArr = this.state.quotesArr));
     }, 500);
   }
-  componentWillUpdate() {
+  async componentWillUpdate() {
     this.timeout = setTimeout((quotesArr) => {
       this.randomArrGen((quotesArr = this.state.quotesArr));
       this.state.randomClassnames.reverse();
     }, 3000);
   }
-  componentWillUnmount() {
+  async componentWillUnmount() {
     clearTimeout(this.timeout);
   }
-  randomArrGen = (quotesArr) => {
+  randomArrGen = async (quotesArr) => {
     return this.setState({
       ...this.state,
       initialArr:
@@ -50,7 +50,12 @@ class Homepage extends React.Component {
           {this.state.initialArr !== null ? (
             <div
               class="tile is-parent"
-              style={{ fontFamily: " cursive", fontSize: "80px",textAlign:"center",marginTop:"100px" }}
+              style={{
+                fontFamily: " cursive",
+                fontSize: "80px",
+                textAlign: "center",
+                marginTop: "100px",
+              }}
             >
               {this.state.initialArr}
               {this.state.initialArr ? <hr /> : null}
