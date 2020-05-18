@@ -24,13 +24,13 @@ class Homepage extends React.Component {
   componentDidMount() {
     this.timeout = setTimeout((quotesArr) => {
       this.randomArrGen((quotesArr = this.state.quotesArr));
-    }, 1000);
+    }, 500);
   }
   componentWillUpdate() {
     this.timeout = setTimeout((quotesArr) => {
       this.randomArrGen((quotesArr = this.state.quotesArr));
       this.state.randomClassnames.reverse();
-    }, 3500);
+    }, 3000);
   }
   componentWillUnmount() {
     clearTimeout(this.timeout);
@@ -46,22 +46,17 @@ class Homepage extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        <hr />
-        <div class="tile is-parent">
-          <article class={this.state.randomClassnames[0]}>
-            <p class="title">Aman Sharma Fullstack Developer</p>
-
-            {this.state.initialArr !== null ? (
-              <div
-                class="content"
-                style={{ fontFamily: " cursive", fontSize: "60px" }}
-              >
-                {this.state.initialArr}
-                {this.state.initialArr ? <hr /> : null}
-              </div>
-            ) : null}
-          </article>
-        </div>
+        <section class="hero is-primary is-fullheight">
+          {this.state.initialArr !== null ? (
+            <div
+              class="tile is-parent"
+              style={{ fontFamily: " cursive", fontSize: "80px",textAlign:"center",marginTop:"100px" }}
+            >
+              {this.state.initialArr}
+              {this.state.initialArr ? <hr /> : null}
+            </div>
+          ) : null}
+        </section>
       </div>
     );
   }
