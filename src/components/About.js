@@ -12,16 +12,14 @@ export default function About() {
           <div class="container" style={{ display: "flex" }}>
             <p class="image is-128x128 ">
               <img
-                class="is-rounded"
                 style={{
-                  position: "absolute",
                   justifyContent: "center",
                   border: "2px solid black",
                 }}
                 src={require("../Img/image.jpg")}
               />
             </p>
-            <div style={{marginLeft:"3% "}}>
+            <div style={{ marginLeft: "2% " }}>
               <h2 class="subtitle">
                 Aman Full-stack Developer
                 <hr />
@@ -45,10 +43,33 @@ export default function About() {
               <small>{exactDate}</small>
               <hr style={{ width: "100px" }} />
               <br />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-              ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas
-              non massa sem. Etiam finibus odio quis feugiat facilisis.
+
+              <p>
+                <strong>H</strong>ey, this is my homepage, so I have to say
+                something about myself. Sometimes it is hard to introduce
+                yourself because you know yourself so well that you do not know
+                where to start with.but i have a lot to say.Here its go.
+              </p>
+              <br />
+              <p>
+                I am a person who is positive about every aspect of life. There
+                are many things I like to do, to see, and to experience. I like
+                to read, I like to write I like to think, I like to dream I like
+                to talk, I like to listen.
+              </p>
+              <p>
+                I was pursuing my btech from a engineering college.but i was not
+                satisfy with the education sysytem process there and i found
+                that enviroment is not for me.so was looking for right platform
+                and enviroment where actully i can gain quality stuff and can
+                grow and that time i came to know about alt-campus. then i
+                decided to join alt-campus and drop college. i have completed my
+                full stack web development course from alt-campus and now
+                looking for new opputunites and platforms for designation of
+                full stack developer.
+              </p>
             </p>
+            <strong>Warm-regards</strong>
           </div>
         </div>
       </article>

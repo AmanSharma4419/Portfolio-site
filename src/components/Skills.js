@@ -43,8 +43,14 @@ export default function Skills() {
           <ol type="1">
             <li className="has-text-weight-medium	">Nosql-MongoDB</li>
           </ol>
+          <h3 class="subtitle"> Tools</h3>
+          <ol type="1">
+            <li className="has-text-weight-medium	">
+              Git, CLI, Browser developer tools
+            </li>
+          </ol>
         </div>
-<hr/>
+        <hr />
         <footer class="footer">
           <div class="content has-text-centered">
             <p>

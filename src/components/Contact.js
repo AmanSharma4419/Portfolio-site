@@ -80,7 +80,7 @@ export default function Contact() {
           {isActive ? (
             <article class="message is-primary">
               <div class="message-header">
-                <p>Primary</p>
+                <p>Alert!</p>
                 <button
                   class="delete"
                   aria-label="delete"
