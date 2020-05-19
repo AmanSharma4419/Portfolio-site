@@ -69,7 +69,7 @@ export default function Navbar() {
                     to="/"
                     style={{ boxSizing: "border-box", padding: "3.5px" }}
                   >
-                    <h2 className="has-text-weight-semibold">AMAN SHARMA</h2>
+                    <h2 className="has-text-grey">AMAN SHARMA</h2>
                   </Link>
                 </div>
               </div>

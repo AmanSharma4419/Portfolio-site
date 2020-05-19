@@ -44,7 +44,7 @@ export default function Skills() {
             <li className="has-text-weight-medium	">Nosql-MongoDB</li>
           </ol>
         </div>
-
+<hr/>
         <footer class="footer">
           <div class="content has-text-centered">
             <p>

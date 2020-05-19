@@ -9,32 +9,28 @@ export default function About() {
       <Navbar />
       <section class="hero is-medium is-primary is-bold">
         <div class="hero-body">
-          <div
-            class="container"
-            style={{ display: "flex", justifyContent: "space-between" }}
-          >
+          <div class="container" style={{ display: "flex" }}>
             <p class="image is-128x128 ">
               <img
                 class="is-rounded"
                 style={{
                   position: "absolute",
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "50%",
                   justifyContent: "center",
                   border: "2px solid black",
                 }}
                 src={require("../Img/image.jpg")}
               />
             </p>
-            <h2 class="subtitle">
-              Aman Full-stack Developer
-              <hr />
-              <p style={{ fontFamily: "serif" }}>
-                Can handle both frontend as well as backend of application using
-                latest trending techonologies.
-              </p>
-            </h2>
+            <div style={{marginLeft:"3% "}}>
+              <h2 class="subtitle">
+                Aman Full-stack Developer
+                <hr />
+                <p>
+                  Can handle both frontend, as well as backend, of application
+                  using latest trending techonologies.
+                </p>
+              </h2>
+            </div>
           </div>
         </div>
       </section>
