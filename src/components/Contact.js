@@ -25,7 +25,13 @@ export default function Contact() {
   };
   const handleSubmit = (e) => {
     if (!name || !email || !message) {
-      return setisActive(true), settextTypeCredential(true);
+      return (
+        setisActive(true),
+        settextTypeCredential(true),
+        setTimeout(() => {
+          window.location.reload(true);
+        }, 1000)
+      );
     } else if (!window.navigator.onLine) {
       return alert("PLEASE CHECK YOUR INTERNET CONNECTION.");
     } else if (!validator.isEmail(email)) {
@@ -36,7 +42,10 @@ export default function Contact() {
         setisActive(true),
         setmessage((e.target.value = "")),
         setname((e.target.value = "")),
-        setemail((e.target.value = ""))
+        setemail((e.target.value = "")),
+        setTimeout(() => {
+          window.location.reload(true);
+        }, 1000)
       );
     }
   };
