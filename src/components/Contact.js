@@ -11,9 +11,9 @@ export default function Contact() {
   const [textTypeCredential, settextTypeCredential] = useState(false);
 
   const messageText = {
-    text_for_credentials: "Please Fill Your All Credentials.",
+    text_for_credentials: "Please fill your all credentials.",
     text_for_submission:
-      "Thanks For Your FeedBack Will Get In Touch Very Soon.",
+      "Thanks for your feedBack will get in touch very soon.",
     text_for_invalid_email: "Please enter valid email adress.",
   };
   let templateParams = {
@@ -30,7 +30,7 @@ export default function Contact() {
         settextTypeCredential(true),
         setTimeout(() => {
           window.location.reload(true);
-        }, 1000)
+        }, 1500)
       );
     } else if (!window.navigator.onLine) {
       return alert("PLEASE CHECK YOUR INTERNET CONNECTION.");
@@ -42,10 +42,7 @@ export default function Contact() {
         setisActive(true),
         setmessage((e.target.value = "")),
         setname((e.target.value = "")),
-        setemail((e.target.value = "")),
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000)
+        setemail((e.target.value = ""))
       );
     }
   };
