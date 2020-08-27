@@ -16,6 +16,7 @@ export default function About() {
                   justifyContent: "center",
                 }}
                 src={require("../Img/image.jpg")}
+                alt="Loading..."
               />
             </div>
             <div style={{ marginLeft: "2% " }}>
