@@ -10,15 +10,14 @@ export default function About() {
       <section class="hero is-medium is-primary is-bold">
         <div class="hero-body">
           <div class="container" style={{ display: "flex" }}>
-            <p class="image is-128x128 ">
+            <div style={{ height: "200px", width: "200px" }}>
               <img
                 style={{
                   justifyContent: "center",
-                  border: "2px solid black",
                 }}
                 src={require("../Img/image.jpg")}
               />
-            </p>
+            </div>
             <div style={{ marginLeft: "2% " }}>
               <h2 class="subtitle">
                 Aman Full-stack Developer
